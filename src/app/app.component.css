@@ -1,0 +1,129 @@
+.item1 { grid-area: artistAlbum; font-weight: bold; font-size: 20px;}
+.item2 { grid-area: copyright; }
+.item3 { grid-area: price; }
+.item4 { grid-area: picture; }
+.item5 { grid-area: itunes; height:15px; }
+
+.grid-container {
+
+  display: grid;
+  width: 85%;
+  grid-template-areas:
+    'picture picture picture picture picture picture'
+    'artistAlbum artistAlbum artistAlbum artistAlbum artistAlbum artistAlbum'
+    'price price price price price price'
+    'itunes itunes itunes itunes itunes itunes'
+    'copyright copyright copyright copyright copyright copyright';
+  /* grid-gap: 5px; */
+  /* background-color: #2196F3; */
+  padding: 10px;
+}
+.grid-container > div {
+  width: 350px;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+.singleGrid {
+  margin: 0 auto;
+}
+
+.header {
+  margin: 0 auto;
+  width: 100%;
+  height: 60px;
+
+}
+#gridCss{
+    margin: 0 auto;
+}
+#logo {
+  position: relative;
+  margin: 0 auto;
+  /* float:right; */
+  width: 235px;
+  height: 40px;
+}
+#banner {
+  background:#666;
+  height:120px;
+  clear:both;
+}
+#artistName {
+  padding: 0 10px;
+  margin-top: 13px;
+  border-radius: 2rem;
+  height: 2rem;
+  width: 185px;
+  border: none;
+   padding-right: 50px;
+  /* padding: 0 6rem 0 2rem; */
+}
+
+#left_col {
+overflow: hidden;
+  overflow-y: scroll;
+  height:450px;
+  width: 320px;
+  float: left;
+}
+#sideBar{
+  width: 500px;
+  overflow: hidden;
+}
+#albumName{
+  margin-left: 100px;
+  margin-top: 20px;
+  overflow: hidden;
+  width: 200px;
+}
+#thumbnail{
+  float:left;
+  width: 90px;
+}
+
+#right_col {
+  margin: 0 auto;
+  width: 400px;
+}
+#footer {
+  padding: 20px;
+  clear: both;
+}
+
+input[type="submit"] {
+    margin-left: -50px;
+    height: 25px;
+    width: 50px;
+    background: blue;
+    color: white;
+    border: 0;
+    -webkit-appearance: none;
+}
+#question{
+  cursor: pointer;
+  width: 10%;
+  position: absolute;
+   right: 2px;
+   top: 17px;
+   opacity: .7;
+  /* height: 20px; */
+}
+#question:hover {
+  opacity: 0.5;
+}
+#itunesImage {
+  margin-top: -30px;
+}
+#apple{
+  height: 400px;
+  width: 400px;
+  position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-left: -200px;
+   margin-top: -200px;
+}

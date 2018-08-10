@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="header" [@searchAnimation]>
+    <div id="logo">
+        <div class="form-group">
+          <input  (keyup.enter)="getItunes(); logoOff();" (keyup)="onNameKeyUp($event);" id="artistName" type="text" class="form-control" placeholder="Enter an Arist or Album Name">
+          <img id="question"  src="../assets/images/question.png" (click)="getItunes(); logoOff();" type="button">
+        </div>
+    </div>
+  </div>
+
+ <div class="content" *ngIf="!logoItunes" >
+   <div id="left_col" [@sideAnimation]>
+     <div id="sideBar" *ngFor="let artist of newArray" (click)="displayAlbum(artist, newArray);">
+       <div id="thumbnail"><img [src]="artist.results.artworkUrl100" alt="" border=3 height=80 width=80></div>
+       <div id="albumName"><p>{{ artist.results.collectionName }}</p></div>
+     </div>
+   </div>
+    <div id="right_col" [@midAnimation]>
+      <div id="gridCss" *ngFor="let artist of newArray">
+        <div *ngIf="artist.display" class="grid-container singleGrid">
+          <div class="item1">{{ artist.results.artistName }} - {{ artist.results.collectionName }}</div>
+          <div class="item2">{{ artist.results.copyright }}</div>
+          <div class="item3">${{ artist.results.collectionPrice }} {{ artist.results.currency }} </div>
+          <div class="item4"><img [src]="artist.results.artworkUrl100" alt="" border=3 height=300 width=300></div>
+          <div class="item5">
+            <a [href]="artist.results.collectionViewUrl" target="_blank"><img src="../assets/images/itunes2.png" id="itunesImage" alt="Itunes" style="width:82px;height:82px;"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+ </div>
+
+ <div class="itunesLogo" *ngIf="logoItunes" >
+    <img [@logoAnimation] id="apple" src="../assets/images/apple.png">
+ </div>
+</div>
